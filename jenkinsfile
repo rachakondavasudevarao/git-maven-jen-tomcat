@@ -23,11 +23,11 @@ pipeline {
                     bat 'mvn install'
                 }
             }
-          stage ('deploy stage') {
+           }
+           stage ('deploy stage') {
             steps {
                 withMaven(maven : 'apache-maven-3.6.3') {
-                    archiveArtifacts 'mvn tomcat:deploy'
-                }
+                    bat 'mvn tomcat:deploy'  
             }  
         }
     }
